@@ -1,5 +1,5 @@
 {
-  "name": "civicrm/civicrm-drupal-8",
+  "name": "civicrm/civicrm-drupal",
   "description": "Open source constituent relationship management for non-profits, NGOs and advocacy organizations.",
   "type": "drupal-module",
   "license": "AGPL-3.0",
