@@ -251,6 +251,7 @@ function _civicrm_get_profiles($contact_id) {
 function civicrm_form_user_register_form_alter(&$form, &$form_state, $form_id) {
   $civicrm = \Drupal::service('civicrm');
   $civicrm->initialize();
+  CRM_Core_Config::singleton()->keyDisable = TRUE;
   $html = \CRM_Core_BAO_UFGroup::getEditHTML(NULL, '', NULL, TRUE, TRUE, NULL, FALSE, $civicrm->getCtype());
 
   // Need to disable the page cache.
@@ -273,6 +274,7 @@ function civicrm_form_user_register_form_alter(&$form, &$form_state, $form_id) {
  */
 function _civicrm_user_register_form_validate(&$form, FormStateInterface $form_state) {
   \Drupal::service('civicrm')->initialize();
+  CRM_Core_Config::singleton()->keyDisable = TRUE;
   $errors = CRM_Core_BAO_UFGroup::isValid(NULL, '', TRUE);
 
   if (is_array($errors)) {
